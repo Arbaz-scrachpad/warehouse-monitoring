@@ -11,4 +11,11 @@
     </parent>
     <artifactId>sensor-contract</artifactId>
     <name>sensor-contract</name>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
