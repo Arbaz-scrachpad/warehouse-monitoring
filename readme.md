@@ -19,7 +19,7 @@ $udp.Send($bytes, $bytes.Length, "127.0.0.1", 3344)
 $udp.Close()
 
 $udp = New-Object System.Net.Sockets.UdpClient
-$bytes = [System.Text.Encoding]::UTF8.GetBytes("sensor_id=h1; value=51")
+$bytes = [System.Text.Encoding]::UTF8.GetBytes("sensor_id=h1; value=50")
 $udp.Send($bytes, $bytes.Length, "127.0.0.1", 3355)
 $udp.Close()
 
