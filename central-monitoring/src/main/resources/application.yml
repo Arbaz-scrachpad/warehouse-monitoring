@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: central-monitoring
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+monitoring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    topic: ${KAFKA_TOPIC:sensor-measurements}
+    group-id: ${KAFKA_GROUP_ID:central-monitoring}
+    concurrency: ${KAFKA_CONCURRENCY:4}
+  thresholds:
+    temperature: ${TEMPERATURE_THRESHOLD:35.0}
+    humidity: ${HUMIDITY_THRESHOLD:50.0}
